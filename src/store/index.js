@@ -19,11 +19,17 @@ export default createStore({
       state.weather.weatherModalIsOpen = false;
       state.map.mapModalIsOpen = false;
     },
+    openModal(state){
+      state.chooseModalIsOpen = true;
+    }
   },
   actions: {
     closeModals(context){
       context.commit('closeModals');
     },
+    openModal(context){
+      context.commit('openModal');
+    }
   },
   getters: {
     isModalOpen(state){

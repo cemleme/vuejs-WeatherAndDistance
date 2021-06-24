@@ -33,7 +33,7 @@ export default {
       const userId = context.getters.userId;
 
       const response = await fetch(
-        VUE_APP_FIREBASE_DB_URL + userId +'/weather.json',
+        process.env.VUE_APP_FIREBASE_DB_URL + userId +'/weather.json',
         {
           method: "GET"
         }
@@ -56,7 +56,7 @@ export default {
       const userId = context.getters.userId;
 
       fetch(
-        VUE_APP_FIREBASE_DB_URL + userId +'/weather.json',
+        process.env.VUE_APP_FIREBASE_DB_URL + userId +'/weather.json',
         {
           method: "PUT",
           body: JSON.stringify(context.getters.cities),

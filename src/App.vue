@@ -32,11 +32,7 @@ import ChooseWidgetModal from "./components/UI/ChooseModal.vue";
 import TheTopBar from "./components/layouts/TheTopBar.vue";
 
 export default {
-  name: "Home",
   components: { WeatherWidget, MapWidget, ChooseWidgetModal, TheTopBar },
-  data() {
-    return {};
-  },
   computed: {
     mapTargets() {
       return this.$store.getters.mapTargets;
@@ -54,7 +50,7 @@ export default {
   },
   methods: {
     openModal() {
-      this.$store.state.chooseModalIsOpen = true;
+      this.$store.dispatch('openModal');
     },
   },
   async beforeCreate() {
