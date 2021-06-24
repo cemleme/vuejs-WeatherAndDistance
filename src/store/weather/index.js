@@ -100,7 +100,7 @@ export default {
       return state.weatherModalIsOpen;
     },
     weatherAPIURL: () => (cityName) => {
-      return `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${process.env.VUE_APP_OPENWEATHERMAP_KEY}`;
+      return `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${process.env.VUE_APP_OPENWEATHERMAP_KEY}`;
     },
     cities(state) {
       return state.weatherCities;

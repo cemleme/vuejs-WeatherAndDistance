@@ -110,7 +110,7 @@ export default {
     },
     mapsAPIURL: () => (from, to) => {
       var base =
-        "http://www.mapquestapi.com/directions/v2/route?key="+process.env.VUE_APP_MAPQUEST_KEY;
+        "https://www.mapquestapi.com/directions/v2/route?key="+process.env.VUE_APP_MAPQUEST_KEY;
       base += "&from=" + from;
       base += "&to=" + to;
       return base;
