@@ -26,6 +26,9 @@ export default {
     },
     setWeatherCities(state, payload) {
       state.weatherCities = payload.cities;
+    },
+    async deleteWeatherWidget(state, payload){
+      state.weatherCities = state.weatherCities.filter(weather => weather != payload.cityName);
     }
   },
   actions: {
@@ -94,6 +97,10 @@ export default {
 
       return response.data.name;
     },
+    async deleteWeatherWidget(context, payload){
+      await this.commit('deleteWeatherWidget', payload);
+      this.dispatch('saveWeatherCities');
+    }
   },
   getters: {
     isWeatherModalOpen(state) {
